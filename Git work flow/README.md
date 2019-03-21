@@ -65,6 +65,30 @@ To see currently checked out branch you are working on
 To check current status of commited , uncommited or staging area files
 >>git status 
 
+To synch with upstream Repository
+
+Add the remote, call it “upstream”:
+
+>>git remote add upstream https://github.com/whoever/whatever.git
+
+ Fetch all the branches of that remote into remote-tracking branches,
+ such as upstream/master:
+
+>>git fetch upstream
+
+ Make sure that you’re on your master branch:
+
+>>git checkout master
+
+ Rewrite your master branch so that any commits of yours that
+aren’t already in upstream/master are replayed on top of that
+other branch:
+
+>>git rebase upstream/master
+
+If you don’t want to rewrite the history of your master branch, (for example because other people may have cloned it) then you should replace the last command with 
+
+>>git merge upstream/master
 
 
 
